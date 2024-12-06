@@ -4,7 +4,7 @@ const cors = require('cors');
 const emailRoutes = require('./routes/email');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 // Middleware
 app.use(cors({
@@ -33,7 +33,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server running on port ${port}`);
   console.log('RESEND_API_KEY:', process.env.RESEND_API_KEY ? 'Is set' : 'Not set');
 }); 
